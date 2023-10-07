@@ -27,5 +27,16 @@ class FirstController extends Controller
         
     }
 
+    // __Student store__//
+
+    public function Studentstore(Request $request)
+    {
+        dd($request->all());
+    }
+    public function Aboutstore(Request $request)
+    {
+        dd($request->all());
+    }
+
     
 }

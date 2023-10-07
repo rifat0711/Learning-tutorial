@@ -54,6 +54,11 @@ Route::get('about/us', [FirstController::class, 'About_index'])->name('about.us'
 Route::get('contact-us', [FirstController::class, 'contact_index'])->name('contact.us');
 
 
+
+Route::post('/student/store', [FirstController::class, 'Studentstore'])->name('student.store');
+Route::post('/about/store', [FirstController::class, 'Aboutstore'])->name('about.store');
+
+
 //__Invoke Route__//
 Route::get('/test', Learncontroller::class);
 //Route::get('/hello', Learncontroller::class, 'hello');
