@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\Learncontroller;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Example\FirstController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -19,23 +23,47 @@ Route::get('/', function () {
 });
 
 
-Route::get('/about',function(){
-    return view('about');
+// //_CSRF Token__//
+// Route::get('/about',function( Request $request){
+//     //$token = $request->session()->token();
     
-})->name('about.us');
+ 
+//     $token = csrf_token();
+//     dd($token);
+//     //return view('about');
+    
+// })->name('about.us');
 
 //Route::view('/about','about');
 
-Route::get(md5('/contact'),function(){
-    return view('contact');
-    //return "My roll is  $roll";
-})->name('contact.us');
+// Route::get(md5('/contact'),function(){
+//     return view('contact');
+//     //return "My roll is  $roll";
+// })->name('contact.us');
 
-
-Route::get('/country',function(){
-    return view('country');
+// Route::get('/contact',function(){
+//     return view('contact');
     
-})->middleware('country');
+// })->name('contact.us');
+
+//Laravel 7
+//Route::get('/contact','Example/FirstController@index')->name('contact.us'); 
+
+//__Laravel 8__//
+Route::get('about/us', [FirstController::class, 'About_index'])->name('about.us');
+Route::get('contact-us', [FirstController::class, 'contact_index'])->name('contact.us');
+
+
+//__Invoke Route__//
+Route::get('/test', Learncontroller::class);
+//Route::get('/hello', Learncontroller::class, 'hello');
+
+Route::get('country', [FirstController::class, 'country'])->name('country')->middleware('country');
+
+// Route::get('/country',function(){
+//     return view('country');
+    
+// })->middleware('country');
 
 //__ignore it__ //
 
