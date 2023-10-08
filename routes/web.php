@@ -4,6 +4,8 @@ use App\Http\Controllers\Learncontroller;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Example\FirstController;
+use App\Http\Controllers\Example\SecondController;
+
 
 
 /*
@@ -53,10 +55,30 @@ Route::get('/', function () {
 Route::get('about/us', [FirstController::class, 'About_index'])->name('about.us');
 Route::get('contact-us', [FirstController::class, 'contact_index'])->name('contact.us');
 
+Route::get('/laravel', [FirstController::class, 'laravel'])->name('laravel');
+
+Route::get('/try',function( Request $request ){
+    $request->session()->put('age','24');
+    //session(['name' => 'Learn Hunter']);
+
+});
+
+//- See all session
+Route::get('/all',function( Request $request ){
+   return  $request->session()->all();
+   //$request->session()->flush();
+
+
+});
+
+Route::get('testone', [SecondController::class, 'test']);
+
 
 
 Route::post('/student/store', [FirstController::class, 'Studentstore'])->name('student.store');
 Route::post('/about/store', [FirstController::class, 'Aboutstore'])->name('about.store');
+
+
 
 
 //__Invoke Route__//

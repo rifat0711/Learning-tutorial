@@ -39,6 +39,7 @@
                 <ul class = "list">
                     <li class = "list-item" > <a href= " {{ route('about.us') }} "> About  </a> </li>
                     <li class = "list-item" ><a href= " {{ route('contact.us') }}"> Contact  </a>  </li>
+                    <li class = "list-item" ><a href= " {{ route('laravel') }}"> Laravel  </a>  </li>
 
                 </ul>
                    
