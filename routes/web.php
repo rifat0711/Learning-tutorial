@@ -79,6 +79,8 @@ Route::post('/student/store', [FirstController::class, 'Studentstore'])->name('s
 Route::post('/about/store', [FirstController::class, 'Aboutstore'])->name('about.store');
 
 
+Route::post('/store/contact', [FirstController::class, 'store'])->name('store.contact');
+
 
 
 //__Invoke Route__//

@@ -66,6 +66,21 @@ class FirstController extends Controller
     //     dd($request->all());
     // }
 
+
+
+    public function store(Request $request){
+      
+     //dd($request->all());
+        //return View('page.laravel', ['name' => 'Learn Hunter']);
+        $validated = $request->validate([
+            'name' => 'required|max:55',
+            'email' => 'required|max:80|email',
+            'Password' => 'required|min:6|max:12',
+        ]);
+        
+    }
+
+
     //Laravel method_exists
     public function laravel(){
         //return view ('laravel');
