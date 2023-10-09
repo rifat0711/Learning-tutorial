@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Example;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Example\SecondController;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\URL;
 
@@ -22,7 +24,10 @@ class FirstController extends Controller
 
 
     public function contact_index() {
-       
+
+        //abort(404);
+        //abort(401);
+       Auth::id();
         return view ('contact');
         
         
@@ -77,6 +82,15 @@ class FirstController extends Controller
             'email' => 'required|max:80|email',
             'Password' => 'required|min:6|max:12',
         ]);
+
+        //database data insert
+        //using query to insert data
+        //store the data log file
+
+        //dd($request->all());
+
+        \Log::channel('contactstore')->info('The contact from submitted by '.rand(1,20));
+        return redirect()->back();
         
     }
 

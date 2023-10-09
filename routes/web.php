@@ -58,9 +58,16 @@ Route::get('contact-us', [FirstController::class, 'contact_index'])->name('conta
 Route::get('/laravel', [FirstController::class, 'laravel'])->name('laravel');
 
 Route::get('/try',function( Request $request ){
-    $request->session()->put('age','24');
+    //$request->session()->put('age','24');
     //session(['name' => 'Learn Hunter']);
-
+    // Log::info('this is your age'.rand(1,30));
+    // return redirect()->to('/');
+    $logfile=file(storage_path().'/logs/contact.log');
+    $collection =[];
+    foreach($logfile as $line_number => $line){
+        $collection[]=array('line'=>$line_number, 'contact' =>htmlspecialchars($line));
+    }
+    dd($collection);
 });
 
 //- See all session

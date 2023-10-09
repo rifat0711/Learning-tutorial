@@ -113,6 +113,13 @@ return [
         'emergency' => [
             'path' => storage_path('logs/laravel.log'),
         ],
+
+        'contactstore' => [
+            'driver' => 'single',
+            'path' => storage_path('logs/contact.log'),
+            'level' => 'info',
+            
+        ],
     ],
 
 ];
