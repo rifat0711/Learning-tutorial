@@ -108,6 +108,12 @@ Route::get('/laravel1',function(){
 })->middleware('auth');
 
 
+Route::get('/home',function(){
+    return view('home');
+    
+})->middleware('auth');
+
+
 
 //__ignore it__ //
 
