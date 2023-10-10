@@ -101,6 +101,14 @@ Route::get('country', [FirstController::class, 'country'])->name('country')->mid
     
 // })->middleware('country');
 
+
+Route::get('/laravel1',function(){
+    return view('laravel1');
+    
+})->middleware('auth');
+
+
+
 //__ignore it__ //
 
 Route::get('/dashboard', function () {

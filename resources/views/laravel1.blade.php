@@ -1,0 +1,1 @@
+<h1> It is an another laravel page!!</h1>
