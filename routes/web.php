@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Example\FirstController;
 use App\Http\Controllers\Example\SecondController;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
 
 
@@ -86,6 +87,9 @@ Route::post('/student/store', [FirstController::class, 'Studentstore'])->name('s
 Route::post('/about/store', [FirstController::class, 'Aboutstore'])->name('about.store');
 
 
+
+
+
 Route::post('/store/contact', [FirstController::class, 'store'])->name('store.contact');
 
 
@@ -114,6 +118,23 @@ Route::get('/home',function(){
 })->middleware('auth');
 
 
+
+
+ 
+Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+    $request->fulfill();
+ 
+    return redirect('/home');
+})->middleware(['auth', 'signed'])->name('verification.verify');
+
+
+// Route::get('/email/verify', function () {
+//     return view('auth.verify-email');
+// })->middleware('auth')->name('verification.notice');
+
+
+
+//Auth::routes(['register']->false);
 
 //__ignore it__ //
 
