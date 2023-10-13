@@ -56,6 +56,8 @@ Route::get('/', function () {
 Route::get('about/us', [FirstController::class, 'About_index'])->name('about.us');
 Route::get('contact-us', [FirstController::class, 'contact_index'])->name('contact.us');
 
+Route::get('/user/details/{}', [FirstController::class, 'details'])->name('user.details');
+
 Route::get('/laravel', [FirstController::class, 'laravel'])->name('laravel');
 
 Route::get('/try',function( Request $request ){

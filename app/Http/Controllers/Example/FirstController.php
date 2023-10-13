@@ -1,11 +1,12 @@
 <?php
 
 namespace App\Http\Controllers\Example;
-
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+//use App\Http\Controllers\Example\FirstController;
 use App\Http\Controllers\Example\SecondController;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\URL;
@@ -91,6 +92,25 @@ class FirstController extends Controller
 
         \Log::channel('contactstore')->info('The contact from submitted by '.rand(1,20));
         return redirect()->back();
+        
+    }
+
+
+    public function resend() {
+        
+    }
+
+
+
+    public function details($id) {
+
+        //bring user data
+        
+        //return view ('details');
+       $id= Crypt::decryptString($id);
+       echo $id;
+       return view('details');
+       
         
     }
 
