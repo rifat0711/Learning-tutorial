@@ -60,6 +60,30 @@ Route::get('/user/details/{}', [FirstController::class, 'details'])->name('user.
 
 Route::get('/laravel', [FirstController::class, 'laravel'])->name('laravel');
 
+
+
+
+//__Class crud route__?//
+Route::get('class', [App\Http\Controllers\Admin\ClassController::class, 'index'])->name('class.index');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Route::get('/try',function( Request $request ){
     //$request->session()->put('age','24');
     //session(['name' => 'Learn Hunter']);

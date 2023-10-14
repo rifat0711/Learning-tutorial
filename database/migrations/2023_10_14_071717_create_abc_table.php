@@ -4,19 +4,17 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateClassesTable extends Migration
+class CreateAbcTable extends Migration
 {
     /**
      * Run the migrations.
      *
      * @return void
      */
-  
-
     public function up()
     {
-        Schema::create('classes',function (Blueprint $table){
-            $table ->string('class_id')->nullable();
+        Schema::create('abc',function (Blueprint $table){
+            $table ->string('ab_name')->nullable();
             
 
             $table->timestamps();
@@ -33,6 +31,6 @@ class CreateClassesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('classes');
+        Schema::dropIfExists('abc');
     }
 }
