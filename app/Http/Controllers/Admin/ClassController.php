@@ -20,4 +20,13 @@ class ClassController extends Controller
         return view('admin.class.index', compact('class'));
         
     }
+
+    //__Create from page__//
+    public function create() 
+     {
+        return view('admin.class.create');
+        
+    }
+
+
 }

@@ -8,10 +8,11 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
+             <a href= "{{ route('class.create') }}" class ="btn btn-sm btn-primary" style="float:right;"> Add New </a>
 
-                      <a href= "" class ="btn tbn-sm btn-primary" style="float:right;">Add New </a>
-                    <table class="table table-responsive table-strioe">
+                     
+
+                    <table class="table table-responsive table-striped">
                       <thead>
                         <tr>
                             <td>SL</td>

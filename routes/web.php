@@ -65,6 +65,7 @@ Route::get('/laravel', [FirstController::class, 'laravel'])->name('laravel');
 
 //__Class crud route__?//
 Route::get('class', [App\Http\Controllers\Admin\ClassController::class, 'index'])->name('class.index');
+Route::get('create/class', [App\Http\Controllers\Admin\ClassController::class, 'create'])->name('class.create');
 
 
 
