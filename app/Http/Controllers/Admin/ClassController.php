@@ -28,5 +28,16 @@ class ClassController extends Controller
         
     }
 
+    //___Delete Method___//
+
+    public function delete($id) 
+    {
+        DB::table('classes')->where('id',$id)->delete();
+        return redirect()->back()->with('Success','Successfully deleted');
+       //return view('admin.class.delete');
+       
+   }
+
+
 
 }

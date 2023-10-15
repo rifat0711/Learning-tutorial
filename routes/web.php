@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Example\FirstController;
 use App\Http\Controllers\Example\SecondController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use App\Http\Controllers\Admin\StudentController;
 
 
 
@@ -67,12 +68,15 @@ Route::get('/laravel', [FirstController::class, 'laravel'])->name('laravel');
 Route::get('class', [App\Http\Controllers\Admin\ClassController::class, 'index'])->name('class.index');
 Route::get('create/class', [App\Http\Controllers\Admin\ClassController::class, 'create'])->name('class.create');
 
+//Route::get('class/delete/{id}', [App\Http\Controllers\Admin\ClassController::class, 'delete'])->name('class.delete');
 
 
 
 
 
 
+//__Students crud route__?//
+Route::resource('students', StudentController::class);
 
 
 
