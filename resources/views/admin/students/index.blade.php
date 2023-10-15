@@ -33,8 +33,8 @@
                             <td>{{ $row->phone }}</td>
                             <td>{{ $row->class_id }}</td>
                             <td>
-                                <a href= "" class ="btn btn-sm btn-info">Edit </a>
-                                <a href= "" class ="btn btn-sm btn-info">Delete </a>  
+                                <a href= "('students.edit',$row->id)" class ="btn btn-sm btn-info">Edit </a>
+                                <a href= "('students.distroy',$row->id)" class ="btn btn-sm btn-info">Delete </a>  
                             </td>
 
                             </tr>

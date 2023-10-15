@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use DB;
+use PHPUnit\Framework\MockObject\ReturnValueNotConfiguredException;
 
 
 class StudentController extends Controller
@@ -61,7 +62,7 @@ class StudentController extends Controller
      */
     public function edit($id)
     {
-        //
+        return $id;
     }
 
     /**
@@ -84,6 +85,8 @@ class StudentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // echo"Hello";
+        DB::table('students')->where('id',$id)->delete();
+        return redirect()->back()->with('success','successfully deleted');
     }
 }
