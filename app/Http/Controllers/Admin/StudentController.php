@@ -18,8 +18,8 @@ class StudentController extends Controller
      */
     public function index()
     {
-        // $students=DB::table('students')->orderBy('roll','ASC')->paginate(4);
-        // return view('admin.students.index', compact('students'));
+        $students=DB::table('students')->orderBy('roll','ASC')->paginate(4);
+        return view('admin.students.index', compact('students'));
 
 
         // $students= DB::table('students')->rightJoin('classes','students.class_id','classes.id')
@@ -28,8 +28,10 @@ class StudentController extends Controller
         // ->crossJoin('classes')
         // ->get();
 
-        $students=Student::all();
-        return response()->json($students);
+
+        //____Use Models_____//
+        // $students=Student::all();
+        // return response()->json($students);
 
         // $first=DB::table('students')
         // ->whereNull('name');
