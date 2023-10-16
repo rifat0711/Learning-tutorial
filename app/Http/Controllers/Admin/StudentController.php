@@ -19,6 +19,25 @@ class StudentController extends Controller
     {
         $students=DB::table('students')->orderBy('roll','ASC')->get();
         return view('admin.students.index', compact('students'));
+
+
+        // $students= DB::table('students')->rightJoin('classes','students.class_id','classes.id')
+        // ->get();
+        // $data=DB::table('students')
+        // ->crossJoin('classes')
+        // ->get();
+
+        // $first=DB::table('students')
+        // ->whereNull('name');
+
+        // $users=DB::table('students')
+        // ->whereNull('phone')
+        // ->union($first)
+        // ->get();
+        // return response()->json($users);
+
+
+
     }
 
     /**
