@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use DB;
 use PHPUnit\Framework\MockObject\ReturnValueNotConfiguredException;
+use App\Models\Student;
 
 
 class StudentController extends Controller
@@ -17,8 +18,8 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $students=DB::table('students')->orderBy('roll','ASC')->paginate(4);
-        return view('admin.students.index', compact('students'));
+        // $students=DB::table('students')->orderBy('roll','ASC')->paginate(4);
+        // return view('admin.students.index', compact('students'));
 
 
         // $students= DB::table('students')->rightJoin('classes','students.class_id','classes.id')
@@ -26,6 +27,9 @@ class StudentController extends Controller
         // $data=DB::table('students')
         // ->crossJoin('classes')
         // ->get();
+
+        $students=Student::all();
+        return response()->json($students);
 
         // $first=DB::table('students')
         // ->whereNull('name');
