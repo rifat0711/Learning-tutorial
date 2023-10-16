@@ -16,7 +16,9 @@ class ClassController extends Controller
     //__Index method all database
     public function index() 
     {
-        $class= DB::table('classes')->get();
+        // $class= DB::table('classes')->get();
+        // return view('admin.class.index', compact('class'));
+        $class= DB::table('classes')->paginate(4);
         return view('admin.class.index', compact('class'));
         
     }
