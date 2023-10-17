@@ -7,7 +7,7 @@ use App\Http\Controllers\Example\FirstController;
 use App\Http\Controllers\Example\SecondController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use App\Http\Controllers\Admin\StudentController;
-
+use App\Http\Controllers\Admin\CategoryController;
 
 
 /*
@@ -79,6 +79,13 @@ Route::get('create/class', [App\Http\Controllers\Admin\ClassController::class, '
 Route::resource('students', StudentController::class);
 
 
+
+
+
+//__Category crud route__//
+Route::get('category/index', [CategoryController::class, 'index'])->name('category.index');
+Route::get('category/create', [CategoryController::class, 'create'])->name('category.create');
+Route::post('category/store', [CategoryController::class, 'store'])->name('category.store');
 
 
 
