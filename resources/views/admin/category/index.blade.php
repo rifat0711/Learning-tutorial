@@ -29,7 +29,7 @@
                             <td>{{ $row->category_name }}</td>
                             <td>{{ $row->category_slug}}</td>
                             <td>
-                                <a href= "" class ="btn btn-sm btn-info">edit </a>
+                                <a href= "{{ route('category.edit', $row->id) }}" class ="btn btn-sm btn-info">edit </a>
                                 <a href= "" class ="btn btn-sm btn-info">delete </a>  
                             </td>
 
