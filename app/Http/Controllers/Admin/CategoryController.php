@@ -86,6 +86,15 @@ class CategoryController extends Controller
 
     }
 
+    public function destroy($id) {
+        //__Query bilder__//
+       // DB::table('categories')->where('id',$id)->delete();
+       $category = Category::find($id);
+       $category->delete();
+       //$category->destroy();
+        return redirect()->back();
+    }
+
 
 
 }
