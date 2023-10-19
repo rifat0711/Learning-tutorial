@@ -8,7 +8,7 @@ use App\Http\Controllers\Example\SecondController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use App\Http\Controllers\Admin\StudentController;
 use App\Http\Controllers\Admin\CategoryController;
-
+use App\Http\Controllers\Admin\SubcategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -96,8 +96,10 @@ Route::get('category/edit/{id}', [CategoryController::class, 'edit'])->name('cat
 Route::post('category/update/{id}', [CategoryController::class, 'update'])->name('category.update');
 Route::get('category/delete/{id}', [CategoryController::class, 'destroy'])->name('category.delete');
 
-
-
+//__SubCategory crud route__//
+Route::get('subcategory/index',  [SubcategoryController::class, 'index'])->name('subcategory.index');
+Route::get('subcategory/create', [SubcategoryController::class, 'create'])->name('subcategory.create');
+Route::post('subcategory/store', [SubcategoryController::class, 'store'])->name('subcategory.store');
 
 
 
