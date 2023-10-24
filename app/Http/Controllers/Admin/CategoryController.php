@@ -18,6 +18,13 @@ class CategoryController extends Controller
         //__Eloquent__//
         $category=Category::all();
         return view('admin.category.index',compact('category'));
+
+        //__Collection of laravel___//
+        // $average= collect([1 , 1, 2, 4])->avg();
+        // return $average;
+        // $collection= collect([1,2,3,4,5,6,7,8,9]);
+        // $chanks= $collection->$chunk(5);
+
     
     }
 
@@ -54,6 +61,7 @@ class CategoryController extends Controller
         //Save method
         $category=new Category;
         $category->category_name= $request->category_name;
+        // $category->category_name= setAttribute($request->category_name);
         $category->category_slug= Str::of($request->category_name)->slug('-');
         $category->save();
 
