@@ -41,4 +41,19 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    //___Accessor____//
+    // public function getNameEmailAttribute(){
+    //     return $this->name."-".$this->email; //name_email  //nameemail
+
+    // }
+    // protected function userRegister():Attribute{
+    //     return new Attribute(),
+
+    //     get:fn($value) =>ucfirst($value),
+    //     set:datetime d-m-y, 
+    // );
+    // }
+
+
 }

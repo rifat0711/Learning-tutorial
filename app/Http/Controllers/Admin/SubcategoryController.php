@@ -17,6 +17,12 @@ class SubcategoryController extends Controller
         //__Query bilder__//
         // $category=DB::table('categories')->get();
 
+
+        // $data= DB::table('subcategories')->leftjoin('ategories','subcategories.category_id','categories_id')->get();
+        // return response()->json($data);
+        // dd($data);
+
+
         //__Eloquent__//
         $subcategory=Category::all();
         return view('admin.subcategory.index',compact('subcategory'));

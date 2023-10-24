@@ -13,4 +13,12 @@ class Category extends Model
         'category_slug',
         
     ];
+
+    //__Mutators__//
+
+    // public function setCategoryAttribute($value)  {
+    //     $this->attributes['Category-name'] = ucfirst($value);
+
+        
+    // }
 }
