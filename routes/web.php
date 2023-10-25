@@ -10,18 +10,7 @@ use App\Http\Controllers\Admin\StudentController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\SubcategoryController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-
+// Auth::routes(['register'=>false]);
 // Route::get('/', function () {
     
 //     return view('layouts.app');
@@ -132,11 +121,6 @@ Route::get('testone', [SecondController::class, 'test']);
 
 Route::post('/student/store', [FirstController::class, 'Studentstore'])->name('student.store');
 Route::post('/about/store', [FirstController::class, 'Aboutstore'])->name('about.store');
-
-
-
-
-
 Route::post('/store/contact', [FirstController::class, 'store'])->name('store.contact');
 
 

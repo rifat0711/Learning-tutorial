@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use DB;
+use Cache;
 use Illuminate\Support\str;
 
 class CategoryController extends Controller
@@ -24,6 +25,11 @@ class CategoryController extends Controller
         // return $average;
         // $collection= collect([1,2,3,4,5,6,7,8,9]);
         // $chanks= $collection->$chunk(5);
+
+        $posts=Cache::remember('posts',15,function(){
+            return Category::all();
+
+        });
 
     
     }
